@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f45e974eea.js" crossorigin="anonymous"></script>
+    <title>Yuleisy Gil</title>
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body> 
+  
+    <section class="form-contact">
+      <header>
+        <span>
+            <i class="fa-solid fa-envelope" style="color: #fafcff;"></i>
+        </span>
+      </header>
+
+      <form action="https://formspree.io/f/xjvqbrvn" method="POST"  class="contenedor">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name">
+
+        <label for="email">Correo Electronico</label>
+        <input type="email" name="email" id="email">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="5"></textarea>
+
+       <input class="btn" type="submit" value="Enviar">
+      </form> 
+    </section>
+
+  <script>
+    form.addEventListener("submit", handleSubmit);
+    async function handleSubmit(event) {
+     event.preventDefault();
+     if(validar()){
+     
+     const form = new FormData(this);
+     const response = await fetch(this.action, {
+          method: this.method,
+          body: form,
+          headers: {
+               'Accept': 'application/json'
+           }
+       });
+       if (response.ok) {
+          this.reset();
+          alert('Gracias por contactarte con nosotros. En breve nos estaremos comunicando');
+       }
+    }
+   }
+    
+  
+
+  </script>
+
+</body>
+
+</html> 
